@@ -1,0 +1,804 @@
+[
+  {
+    "tank_id": "PT-01",
+    "timestamp": "2026-03-20T18:33:48.266350+00:00",
+    "temperature_c": 54.46,
+    "ph": 11.491,
+    "free_alkalinity": 11.03,
+    "conductivity_us_cm": 8314.533,
+    "fault": "normal"
+  },
+  {
+    "tank_id": "PT-01",
+    "timestamp": "2026-03-20T18:33:48.266389+00:00",
+    "temperature_c": 56.239,
+    "ph": 11.457,
+    "free_alkalinity": 10.638,
+    "conductivity_us_cm": 8537.616,
+    "fault": "normal"
+  },
+  {
+    "tank_id": "PT-01",
+    "timestamp": "2026-03-20T18:33:48.266397+00:00",
+    "temperature_c": 56.188,
+    "ph": 11.448,
+    "free_alkalinity": 11.083,
+    "conductivity_us_cm": 8562.291,
+    "fault": "normal"
+  },
+  {
+    "tank_id": "PT-01",
+    "timestamp": "2026-03-20T18:33:48.266403+00:00",
+    "temperature_c": 54.458,
+    "ph": 11.456,
+    "free_alkalinity": 11.106,
+    "conductivity_us_cm": 8128.787,
+    "fault": "normal"
+  },
+  {
+    "tank_id": "PT-01",
+    "timestamp": "2026-03-20T18:33:48.266408+00:00",
+    "temperature_c": 54.867,
+    "ph": 11.528,
+    "free_alkalinity": 11.211,
+    "conductivity_us_cm": 8606.653,
+    "fault": "normal"
+  },
+  {
+    "tank_id": "PT-02",
+    "timestamp": "2026-03-20T18:33:48.266414+00:00",
+    "temperature_c": 59.755,
+    "ph": 12.074,
+    "free_alkalinity": 12.938,
+    "total_alkalinity": 17.848,
+    "fault": "normal"
+  },
+  {
+    "tank_id": "PT-02",
+    "timestamp": "2026-03-20T18:33:48.266421+00:00",
+    "temperature_c": 60.405,
+    "ph": 11.947,
+    "free_alkalinity": 13.208,
+    "total_alkalinity": 17.357,
+    "fault": "normal"
+  },
+  {
+    "tank_id": "PT-02",
+    "timestamp": "2026-03-20T18:33:48.266426+00:00",
+    "temperature_c": 60.277,
+    "ph": 12.053,
+    "free_alkalinity": 13.287,
+    "total_alkalinity": 17.707,
+    "fault": "normal"
+  },
+  {
+    "tank_id": "PT-02",
+    "timestamp": "2026-03-20T18:33:48.266430+00:00",
+    "temperature_c": 59.318,
+    "ph": 12.085,
+    "free_alkalinity": 12.693,
+    "total_alkalinity": 17.572,
+    "fault": "normal"
+  },
+  {
+    "tank_id": "PT-02",
+    "timestamp": "2026-03-20T18:33:48.266434+00:00",
+    "temperature_c": 61.625,
+    "ph": 12.029,
+    "free_alkalinity": 13.23,
+    "total_alkalinity": 17.585,
+    "fault": "normal"
+  },
+  {
+    "tank_id": "PT-03",
+    "timestamp": "2026-03-20T18:33:48.266438+00:00",
+    "conductivity_us_cm": 56.916,
+    "ph": 7.427,
+    "rinse_flow": 12.148,
+    "fault": "normal"
+  },
+  {
+    "tank_id": "PT-03",
+    "timestamp": "2026-03-20T18:33:48.266445+00:00",
+    "conductivity_us_cm": 60.336,
+    "ph": 7.526,
+    "rinse_flow": 12.718,
+    "fault": "normal"
+  },
+  {
+    "tank_id": "PT-03",
+    "timestamp": "2026-03-20T18:33:48.266449+00:00",
+    "conductivity_us_cm": 59.565,
+    "ph": 7.576,
+    "rinse_flow": 11.221,
+    "fault": "normal"
+  },
+  {
+    "tank_id": "PT-03",
+    "timestamp": "2026-03-20T18:33:48.266452+00:00",
+    "conductivity_us_cm": 59.139,
+    "ph": 7.602,
+    "rinse_flow": 11.806,
+    "fault": "normal"
+  },
+  {
+    "tank_id": "PT-03",
+    "timestamp": "2026-03-20T18:33:48.266456+00:00",
+    "conductivity_us_cm": 67.378,
+    "ph": 7.498,
+    "rinse_flow": 10.498,
+    "fault": "normal"
+  },
+  {
+    "tank_id": "PT-04",
+    "timestamp": "2026-03-20T18:33:48.266460+00:00",
+    "conductivity_us_cm": 46.129,
+    "ph": 7.385,
+    "rinse_flow": 11.409,
+    "fault": "normal"
+  },
+  {
+    "tank_id": "PT-04",
+    "timestamp": "2026-03-20T18:33:48.266463+00:00",
+    "conductivity_us_cm": 47.543,
+    "ph": 7.144,
+    "rinse_flow": 11.785,
+    "fault": "normal"
+  },
+  {
+    "tank_id": "PT-04",
+    "timestamp": "2026-03-20T18:33:48.266467+00:00",
+    "conductivity_us_cm": 42.259,
+    "ph": 7.324,
+    "rinse_flow": 11.182,
+    "fault": "normal"
+  },
+  {
+    "tank_id": "PT-04",
+    "timestamp": "2026-03-20T18:33:48.266470+00:00",
+    "conductivity_us_cm": 46.455,
+    "ph": 7.374,
+    "rinse_flow": 12.128,
+    "fault": "normal"
+  },
+  {
+    "tank_id": "PT-04",
+    "timestamp": "2026-03-20T18:33:48.266473+00:00",
+    "conductivity_us_cm": 46.94,
+    "ph": 7.15,
+    "rinse_flow": 10.969,
+    "fault": "normal"
+  },
+  {
+    "tank_id": "PT-05",
+    "timestamp": "2026-03-20T18:33:48.266477+00:00",
+    "ph": 9.003,
+    "temperature_c": 30.715,
+    "titanium_ppm": 1.603,
+    "fault": "normal"
+  },
+  {
+    "tank_id": "PT-05",
+    "timestamp": "2026-03-20T18:33:48.266481+00:00",
+    "ph": 8.926,
+    "temperature_c": 30.351,
+    "titanium_ppm": 1.62,
+    "fault": "normal"
+  },
+  {
+    "tank_id": "PT-05",
+    "timestamp": "2026-03-20T18:33:48.266485+00:00",
+    "ph": 8.931,
+    "temperature_c": 30.672,
+    "titanium_ppm": 1.418,
+    "fault": "normal"
+  },
+  {
+    "tank_id": "PT-05",
+    "timestamp": "2026-03-20T18:33:48.266488+00:00",
+    "ph": 8.962,
+    "temperature_c": 30.29,
+    "titanium_ppm": 1.563,
+    "fault": "normal"
+  },
+  {
+    "tank_id": "PT-05",
+    "timestamp": "2026-03-20T18:33:48.266492+00:00",
+    "ph": 8.899,
+    "temperature_c": 30.424,
+    "titanium_ppm": 1.455,
+    "fault": "normal"
+  },
+  {
+    "tank_id": "PT-06",
+    "timestamp": "2026-03-20T18:33:48.266502+00:00",
+    "temperature_c": 45.32,
+    "free_acid_pts": 0.953,
+    "total_acid_pts": 21.184,
+    "zinc_g_per_l": 1.413,
+    "accelerator_pts": 3.229,
+    "conductivity_us_cm": 3073.761,
+    "fault": "normal"
+  },
+  {
+    "tank_id": "PT-06",
+    "timestamp": "2026-03-20T18:33:48.266508+00:00",
+    "temperature_c": 45.949,
+    "free_acid_pts": 1.026,
+    "total_acid_pts": 21.214,
+    "zinc_g_per_l": 1.337,
+    "accelerator_pts": 3.489,
+    "conductivity_us_cm": 3100.441,
+    "fault": "normal"
+  },
+  {
+    "tank_id": "PT-06",
+    "timestamp": "2026-03-20T18:33:48.266513+00:00",
+    "temperature_c": 45.218,
+    "free_acid_pts": 0.956,
+    "total_acid_pts": 21.367,
+    "zinc_g_per_l": 1.424,
+    "accelerator_pts": 3.67,
+    "conductivity_us_cm": 3067.008,
+    "fault": "normal"
+  },
+  {
+    "tank_id": "PT-06",
+    "timestamp": "2026-03-20T18:33:48.266519+00:00",
+    "temperature_c": 45.586,
+    "free_acid_pts": 0.963,
+    "total_acid_pts": 21.121,
+    "zinc_g_per_l": 1.421,
+    "accelerator_pts": 3.445,
+    "conductivity_us_cm": 3102.504,
+    "fault": "normal"
+  },
+  {
+    "tank_id": "PT-06",
+    "timestamp": "2026-03-20T18:33:48.266524+00:00",
+    "temperature_c": 44.384,
+    "free_acid_pts": 1.001,
+    "total_acid_pts": 20.917,
+    "zinc_g_per_l": 1.383,
+    "accelerator_pts": 3.494,
+    "conductivity_us_cm": 2983.587,
+    "fault": "normal"
+  },
+  {
+    "tank_id": "PT-07",
+    "timestamp": "2026-03-20T18:33:48.266530+00:00",
+    "conductivity_us_cm": 117.987,
+    "ph": 6.897,
+    "rinse_flow": 11.828,
+    "fault": "normal"
+  },
+  {
+    "tank_id": "PT-07",
+    "timestamp": "2026-03-20T18:33:48.266533+00:00",
+    "conductivity_us_cm": 114.498,
+    "ph": 7.02,
+    "rinse_flow": 11.809,
+    "fault": "normal"
+  },
+  {
+    "tank_id": "PT-07",
+    "timestamp": "2026-03-20T18:33:48.266537+00:00",
+    "conductivity_us_cm": 119.33,
+    "ph": 6.838,
+    "rinse_flow": 12.229,
+    "fault": "normal"
+  },
+  {
+    "tank_id": "PT-07",
+    "timestamp": "2026-03-20T18:33:48.266540+00:00",
+    "conductivity_us_cm": 114.557,
+    "ph": 6.987,
+    "rinse_flow": 11.132,
+    "fault": "normal"
+  },
+  {
+    "tank_id": "PT-07",
+    "timestamp": "2026-03-20T18:33:48.266544+00:00",
+    "conductivity_us_cm": 119.263,
+    "ph": 6.9,
+    "rinse_flow": 11.308,
+    "fault": "normal"
+  },
+  {
+    "tank_id": "PT-08",
+    "timestamp": "2026-03-20T18:33:48.266547+00:00",
+    "ph": 4.494,
+    "temperature_c": 29.601,
+    "concentration_pct": 0.757,
+    "fault": "normal"
+  },
+  {
+    "tank_id": "PT-08",
+    "timestamp": "2026-03-20T18:33:48.266551+00:00",
+    "ph": 4.496,
+    "temperature_c": 30.932,
+    "concentration_pct": 0.712,
+    "fault": "normal"
+  },
+  {
+    "tank_id": "PT-08",
+    "timestamp": "2026-03-20T18:33:48.266554+00:00",
+    "ph": 4.478,
+    "temperature_c": 29.681,
+    "concentration_pct": 0.747,
+    "fault": "normal"
+  },
+  {
+    "tank_id": "PT-08",
+    "timestamp": "2026-03-20T18:33:48.266557+00:00",
+    "ph": 4.518,
+    "temperature_c": 29.68,
+    "concentration_pct": 0.715,
+    "fault": "normal"
+  },
+  {
+    "tank_id": "PT-08",
+    "timestamp": "2026-03-20T18:33:48.266561+00:00",
+    "ph": 4.441,
+    "temperature_c": 30.825,
+    "concentration_pct": 0.772,
+    "fault": "normal"
+  },
+  {
+    "tank_id": "ED-01",
+    "timestamp": "2026-03-20T18:33:48.266568+00:00",
+    "ph": 6.003,
+    "temperature_c": 30.096,
+    "solids_pct": 19.869,
+    "conductivity_us_cm": 1511.95,
+    "voltage_v": 283.482,
+    "meq_acid": 24.405,
+    "pigment_binder_ratio": 0.214,
+    "fault": "normal"
+  },
+  {
+    "tank_id": "ED-01",
+    "timestamp": "2026-03-20T18:33:48.266575+00:00",
+    "ph": 6.01,
+    "temperature_c": 30.278,
+    "solids_pct": 20.269,
+    "conductivity_us_cm": 1503.155,
+    "voltage_v": 278.272,
+    "meq_acid": 24.616,
+    "pigment_binder_ratio": 0.211,
+    "fault": "normal"
+  },
+  {
+    "tank_id": "ED-01",
+    "timestamp": "2026-03-20T18:33:48.266582+00:00",
+    "ph": 6.004,
+    "temperature_c": 29.87,
+    "solids_pct": 19.846,
+    "conductivity_us_cm": 1518.935,
+    "voltage_v": 270.225,
+    "meq_acid": 24.837,
+    "pigment_binder_ratio": 0.215,
+    "fault": "normal"
+  },
+  {
+    "tank_id": "ED-01",
+    "timestamp": "2026-03-20T18:33:48.266591+00:00",
+    "ph": 6.008,
+    "temperature_c": 30.1,
+    "solids_pct": 20.355,
+    "conductivity_us_cm": 1523.323,
+    "voltage_v": 272.662,
+    "meq_acid": 24.982,
+    "pigment_binder_ratio": 0.214,
+    "fault": "normal"
+  },
+  {
+    "tank_id": "ED-01",
+    "timestamp": "2026-03-20T18:33:48.266598+00:00",
+    "ph": 6.004,
+    "temperature_c": 30.115,
+    "solids_pct": 19.963,
+    "conductivity_us_cm": 1528.147,
+    "voltage_v": 263.876,
+    "meq_acid": 24.651,
+    "pigment_binder_ratio": 0.218,
+    "fault": "normal"
+  },
+  {
+    "tank_id": "ED-02",
+    "timestamp": "2026-03-20T18:33:48.266608+00:00",
+    "ph": 6.284,
+    "conductivity_us_cm": 1247.705,
+    "solids_pct": 3.13,
+    "fault": "normal"
+  },
+  {
+    "tank_id": "ED-02",
+    "timestamp": "2026-03-20T18:33:48.266611+00:00",
+    "ph": 6.289,
+    "conductivity_us_cm": 1315.573,
+    "solids_pct": 3.036,
+    "fault": "normal"
+  },
+  {
+    "tank_id": "ED-02",
+    "timestamp": "2026-03-20T18:33:48.266636+00:00",
+    "ph": 6.205,
+    "conductivity_us_cm": 1233.166,
+    "solids_pct": 3.169,
+    "fault": "normal"
+  },
+  {
+    "tank_id": "ED-02",
+    "timestamp": "2026-03-20T18:33:48.266645+00:00",
+    "ph": 6.222,
+    "conductivity_us_cm": 1267.668,
+    "solids_pct": 3.096,
+    "fault": "normal"
+  },
+  {
+    "tank_id": "ED-02",
+    "timestamp": "2026-03-20T18:33:48.266649+00:00",
+    "ph": 6.192,
+    "conductivity_us_cm": 1321.58,
+    "solids_pct": 3.085,
+    "fault": "normal"
+  },
+  {
+    "tank_id": "ED-03",
+    "timestamp": "2026-03-20T18:33:48.266654+00:00",
+    "ph": 6.162,
+    "conductivity_us_cm": 493.212,
+    "solids_pct": 0.838,
+    "fault": "normal"
+  },
+  {
+    "tank_id": "ED-03",
+    "timestamp": "2026-03-20T18:33:48.266658+00:00",
+    "ph": 6.245,
+    "conductivity_us_cm": 508.795,
+    "solids_pct": 0.891,
+    "fault": "normal"
+  },
+  {
+    "tank_id": "ED-03",
+    "timestamp": "2026-03-20T18:33:48.266662+00:00",
+    "ph": 6.27,
+    "conductivity_us_cm": 504.46,
+    "solids_pct": 0.886,
+    "fault": "normal"
+  },
+  {
+    "tank_id": "ED-03",
+    "timestamp": "2026-03-20T18:33:48.266665+00:00",
+    "ph": 6.267,
+    "conductivity_us_cm": 509.153,
+    "solids_pct": 0.871,
+    "fault": "normal"
+  },
+  {
+    "tank_id": "ED-03",
+    "timestamp": "2026-03-20T18:33:48.266669+00:00",
+    "ph": 6.171,
+    "conductivity_us_cm": 506.243,
+    "solids_pct": 0.808,
+    "fault": "normal"
+  },
+  {
+    "tank_id": "ED-04",
+    "timestamp": "2026-03-20T18:33:48.266672+00:00",
+    "conductivity_us_cm": 10.37,
+    "ph": 6.605,
+    "fault": "normal"
+  },
+  {
+    "tank_id": "ED-04",
+    "timestamp": "2026-03-20T18:33:48.266675+00:00",
+    "conductivity_us_cm": 9.781,
+    "ph": 6.407,
+    "fault": "normal"
+  },
+  {
+    "tank_id": "ED-04",
+    "timestamp": "2026-03-20T18:33:48.266678+00:00",
+    "conductivity_us_cm": 10.91,
+    "ph": 6.492,
+    "fault": "normal"
+  },
+  {
+    "tank_id": "ED-04",
+    "timestamp": "2026-03-20T18:33:48.266681+00:00",
+    "conductivity_us_cm": 9.075,
+    "ph": 6.661,
+    "fault": "normal"
+  },
+  {
+    "tank_id": "ED-04",
+    "timestamp": "2026-03-20T18:33:48.266683+00:00",
+    "conductivity_us_cm": 8.58,
+    "ph": 6.534,
+    "fault": "normal"
+  },
+  {
+    "tank_id": "PT-06",
+    "timestamp": "2026-03-20T18:33:48.266687+00:00",
+    "temperature_c": 44.916,
+    "free_acid_pts": 2.4,
+    "total_acid_pts": 26.1,
+    "zinc_g_per_l": 1.352,
+    "accelerator_pts": 3.545,
+    "conductivity_us_cm": 4380,
+    "fault": "acid_drift"
+  },
+  {
+    "tank_id": "PT-06",
+    "timestamp": "2026-03-20T18:33:48.266695+00:00",
+    "temperature_c": 45.338,
+    "free_acid_pts": 2.4,
+    "total_acid_pts": 26.1,
+    "zinc_g_per_l": 1.389,
+    "accelerator_pts": 3.447,
+    "conductivity_us_cm": 4380,
+    "fault": "acid_drift"
+  },
+  {
+    "tank_id": "PT-06",
+    "timestamp": "2026-03-20T18:33:48.266702+00:00",
+    "temperature_c": 44.136,
+    "free_acid_pts": 2.4,
+    "total_acid_pts": 26.1,
+    "zinc_g_per_l": 1.454,
+    "accelerator_pts": 3.529,
+    "conductivity_us_cm": 4380,
+    "fault": "acid_drift"
+  },
+  {
+    "tank_id": "PT-06",
+    "timestamp": "2026-03-20T18:33:48.266713+00:00",
+    "temperature_c": 45.387,
+    "free_acid_pts": 0.989,
+    "total_acid_pts": 20.85,
+    "zinc_g_per_l": 0.78,
+    "accelerator_pts": 2.1,
+    "conductivity_us_cm": 2981.672,
+    "fault": "zinc_depletion"
+  },
+  {
+    "tank_id": "PT-06",
+    "timestamp": "2026-03-20T18:33:48.266718+00:00",
+    "temperature_c": 45.244,
+    "free_acid_pts": 0.99,
+    "total_acid_pts": 20.484,
+    "zinc_g_per_l": 0.78,
+    "accelerator_pts": 2.1,
+    "conductivity_us_cm": 2972.861,
+    "fault": "zinc_depletion"
+  },
+  {
+    "tank_id": "PT-06",
+    "timestamp": "2026-03-20T18:33:48.266725+00:00",
+    "temperature_c": 45.9,
+    "free_acid_pts": 0.993,
+    "total_acid_pts": 21.316,
+    "zinc_g_per_l": 0.78,
+    "accelerator_pts": 2.1,
+    "conductivity_us_cm": 3032.284,
+    "fault": "zinc_depletion"
+  },
+  {
+    "tank_id": "PT-06",
+    "timestamp": "2026-03-20T18:33:48.266731+00:00",
+    "temperature_c": 44.544,
+    "free_acid_pts": 1.7,
+    "total_acid_pts": 20.468,
+    "zinc_g_per_l": 1.41,
+    "accelerator_pts": 1.8,
+    "conductivity_us_cm": 2994.691,
+    "fault": "accelerator_depletion"
+  },
+  {
+    "tank_id": "PT-06",
+    "timestamp": "2026-03-20T18:33:48.266737+00:00",
+    "temperature_c": 44.629,
+    "free_acid_pts": 1.7,
+    "total_acid_pts": 21.492,
+    "zinc_g_per_l": 1.414,
+    "accelerator_pts": 1.8,
+    "conductivity_us_cm": 3019.644,
+    "fault": "accelerator_depletion"
+  },
+  {
+    "tank_id": "PT-06",
+    "timestamp": "2026-03-20T18:33:48.266743+00:00",
+    "temperature_c": 44.953,
+    "free_acid_pts": 1.7,
+    "total_acid_pts": 20.808,
+    "zinc_g_per_l": 1.366,
+    "accelerator_pts": 1.8,
+    "conductivity_us_cm": 2994.491,
+    "fault": "accelerator_depletion"
+  },
+  {
+    "tank_id": "PT-05",
+    "timestamp": "2026-03-20T18:33:48.266752+00:00",
+    "ph": 9.8,
+    "temperature_c": 30.886,
+    "titanium_ppm": 0.3,
+    "fault": "titanium_depletion"
+  },
+  {
+    "tank_id": "PT-05",
+    "timestamp": "2026-03-20T18:33:48.266756+00:00",
+    "ph": 9.8,
+    "temperature_c": 29.492,
+    "titanium_ppm": 0.3,
+    "fault": "titanium_depletion"
+  },
+  {
+    "tank_id": "PT-05",
+    "timestamp": "2026-03-20T18:33:48.266759+00:00",
+    "ph": 9.8,
+    "temperature_c": 29.523,
+    "titanium_ppm": 0.3,
+    "fault": "titanium_depletion"
+  },
+  {
+    "tank_id": "PT-01",
+    "timestamp": "2026-03-20T18:33:48.266763+00:00",
+    "temperature_c": 55.555,
+    "ph": 10.6,
+    "free_alkalinity": 5.2,
+    "conductivity_us_cm": 8573.295,
+    "fault": "alkalinity_depletion"
+  },
+  {
+    "tank_id": "PT-01",
+    "timestamp": "2026-03-20T18:33:48.266767+00:00",
+    "temperature_c": 55.599,
+    "ph": 10.6,
+    "free_alkalinity": 5.2,
+    "conductivity_us_cm": 8368.304,
+    "fault": "alkalinity_depletion"
+  },
+  {
+    "tank_id": "PT-01",
+    "timestamp": "2026-03-20T18:33:48.266771+00:00",
+    "temperature_c": 53.946,
+    "ph": 10.6,
+    "free_alkalinity": 5.2,
+    "conductivity_us_cm": 8642.813,
+    "fault": "alkalinity_depletion"
+  },
+  {
+    "tank_id": "PT-03",
+    "timestamp": "2026-03-20T18:33:48.266778+00:00",
+    "conductivity_us_cm": 320,
+    "ph": 7.247,
+    "rinse_flow": 11.085,
+    "fault": "rinse_contamination"
+  },
+  {
+    "tank_id": "PT-03",
+    "timestamp": "2026-03-20T18:33:48.266782+00:00",
+    "conductivity_us_cm": 320,
+    "ph": 7.619,
+    "rinse_flow": 10.909,
+    "fault": "rinse_contamination"
+  },
+  {
+    "tank_id": "PT-03",
+    "timestamp": "2026-03-20T18:33:48.266786+00:00",
+    "conductivity_us_cm": 320,
+    "ph": 7.773,
+    "rinse_flow": 11.05,
+    "fault": "rinse_contamination"
+  },
+  {
+    "tank_id": "ED-01",
+    "timestamp": "2026-03-20T18:33:48.266789+00:00",
+    "ph": 6.009,
+    "temperature_c": 35.2,
+    "solids_pct": 17.1,
+    "conductivity_us_cm": 1534.881,
+    "voltage_v": 274.045,
+    "meq_acid": 25.217,
+    "pigment_binder_ratio": 0.211,
+    "fault": "temperature_creep"
+  },
+  {
+    "tank_id": "ED-01",
+    "timestamp": "2026-03-20T18:33:48.266796+00:00",
+    "ph": 5.995,
+    "temperature_c": 35.2,
+    "solids_pct": 17.1,
+    "conductivity_us_cm": 1469.765,
+    "voltage_v": 272.663,
+    "meq_acid": 25.031,
+    "pigment_binder_ratio": 0.215,
+    "fault": "temperature_creep"
+  },
+  {
+    "tank_id": "ED-01",
+    "timestamp": "2026-03-20T18:33:48.266803+00:00",
+    "ph": 6.011,
+    "temperature_c": 35.2,
+    "solids_pct": 17.1,
+    "conductivity_us_cm": 1527.403,
+    "voltage_v": 277.555,
+    "meq_acid": 25.047,
+    "pigment_binder_ratio": 0.216,
+    "fault": "temperature_creep"
+  },
+  {
+    "tank_id": "ED-01",
+    "timestamp": "2026-03-20T18:33:48.266810+00:00",
+    "ph": 6.011,
+    "temperature_c": 29.91,
+    "solids_pct": 19.999,
+    "conductivity_us_cm": 1950,
+    "voltage_v": 277.929,
+    "meq_acid": 41.5,
+    "pigment_binder_ratio": 0.213,
+    "fault": "meq_acid_buildup"
+  },
+  {
+    "tank_id": "ED-01",
+    "timestamp": "2026-03-20T18:33:48.266816+00:00",
+    "ph": 6.0,
+    "temperature_c": 29.899,
+    "solids_pct": 19.952,
+    "conductivity_us_cm": 1950,
+    "voltage_v": 276.019,
+    "meq_acid": 41.5,
+    "pigment_binder_ratio": 0.207,
+    "fault": "meq_acid_buildup"
+  },
+  {
+    "tank_id": "ED-01",
+    "timestamp": "2026-03-20T18:33:48.266823+00:00",
+    "ph": 6.035,
+    "temperature_c": 29.882,
+    "solids_pct": 19.761,
+    "conductivity_us_cm": 1950,
+    "voltage_v": 277.834,
+    "meq_acid": 41.5,
+    "pigment_binder_ratio": 0.217,
+    "fault": "meq_acid_buildup"
+  },
+  {
+    "tank_id": "ED-01",
+    "timestamp": "2026-03-20T18:33:48.266830+00:00",
+    "ph": 6.8,
+    "temperature_c": 30.295,
+    "solids_pct": 21.5,
+    "conductivity_us_cm": 1426.945,
+    "voltage_v": 272.144,
+    "meq_acid": 25.59,
+    "pigment_binder_ratio": 0.215,
+    "fault": "ph_drift"
+  },
+  {
+    "tank_id": "ED-01",
+    "timestamp": "2026-03-20T18:33:48.266836+00:00",
+    "ph": 6.8,
+    "temperature_c": 30.285,
+    "solids_pct": 21.5,
+    "conductivity_us_cm": 1472.831,
+    "voltage_v": 270.336,
+    "meq_acid": 24.314,
+    "pigment_binder_ratio": 0.214,
+    "fault": "ph_drift"
+  },
+  {
+    "tank_id": "ED-01",
+    "timestamp": "2026-03-20T18:33:48.266843+00:00",
+    "ph": 6.8,
+    "temperature_c": 29.959,
+    "solids_pct": 21.5,
+    "conductivity_us_cm": 1546.264,
+    "voltage_v": 273.569,
+    "meq_acid": 24.82,
+    "pigment_binder_ratio": 0.207,
+    "fault": "ph_drift"
+  }
+]

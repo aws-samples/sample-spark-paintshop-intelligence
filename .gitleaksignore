@@ -1,0 +1,5 @@
+# Historical Cognito SPA client IDs from public frontend configuration.
+# These are public OAuth identifiers, not client secrets. config.json is now
+# generated ephemerally and excluded from source control.
+ff59e574937e200620e81377fe0960b0d934cb5a:frontend/public/config.json:generic-api-key:3
+4d1589502ac4a7d8cbed90cc8a84e572a8da6361:frontend/public/config.json:generic-api-key:3

@@ -1,0 +1,2 @@
+xgboost==1.7.6
+scikit-learn==1.4.0

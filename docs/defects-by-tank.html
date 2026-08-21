@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Paint Shop — Defect Types by Tank</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Segoe UI', system-ui, sans-serif;
+      background: #0f1117;
+      color: #e2e8f0;
+      min-height: 100vh;
+      padding: 32px 24px;
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 1.6rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      color: #f8fafc;
+      margin-bottom: 6px;
+    }
+
+    .subtitle {
+      text-align: center;
+      font-size: 0.85rem;
+      color: #64748b;
+      margin-bottom: 36px;
+    }
+
+    /* ── Process line ── */
+    .process-line {
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+      gap: 0;
+      overflow-x: auto;
+      padding-bottom: 8px;
+      margin-bottom: 48px;
+    }
+
+    .tank-block {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-width: 100px;
+      position: relative;
+    }
+
+    .arrow {
+      display: flex;
+      align-items: center;
+      padding-top: 22px;
+      color: #334155;
+      font-size: 1.4rem;
+      margin: 0 2px;
+      user-select: none;
+    }
+
+    .tank-pill {
+      padding: 8px 14px;
+      border-radius: 8px;
+      font-size: 0.78rem;
+      font-weight: 700;
+      text-align: center;
+      cursor: default;
+      border: 2px solid transparent;
+      transition: transform 0.15s, box-shadow 0.15s;
+      white-space: nowrap;
+    }
+
+    .tank-pill:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 6px 20px rgba(0,0,0,0.5);
+    }
+
+    .tank-name {
+      font-size: 0.68rem;
+      color: #94a3b8;
+      margin-top: 6px;
+      text-align: center;
+      max-width: 90px;
+    }
+
+    .fault-count {
+      margin-top: 5px;
+      font-size: 0.68rem;
+      font-weight: 700;
+    }
+
+    /* tank group colors */
+    .pt  { background: #1e3a5f; border-color: #3b82f6; color: #93c5fd; }
+    .pt.hot { background: #1a3a5f; border-color: #60a5fa; }
+    .ed  { background: #2d1e4f; border-color: #a855f7; color: #d8b4fe; }
+
+    .has-fault-1 { border-color: #f59e0b; }
+    .has-fault-2 { border-color: #f97316; }
+    .has-fault-3 { border-color: #ef4444; }
+
+    .no-fault { opacity: 0.45; }
+
+    /* ── Fault matrix ── */
+    .section-title {
+      font-size: 1rem;
+      font-weight: 600;
+      color: #cbd5e1;
+      margin-bottom: 16px;
+      padding-left: 4px;
+      border-left: 3px solid #3b82f6;
+      padding-left: 10px;
+    }
+
+    .matrix-wrapper {
+      overflow-x: auto;
+      margin-bottom: 48px;
+    }
+
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      font-size: 0.8rem;
+    }
+
+    thead th {
+      background: #1e293b;
+      color: #94a3b8;
+      padding: 10px 14px;
+      text-align: center;
+      font-weight: 600;
+      white-space: nowrap;
+      border-bottom: 2px solid #334155;
+    }
+
+    thead th.tank-col {
+      color: #e2e8f0;
+    }
+
+    thead th.group-pt { color: #60a5fa; }
+    thead th.group-ed { color: #c084fc; }
+
+    tbody tr:nth-child(even) { background: #111827; }
+    tbody tr:nth-child(odd)  { background: #0f1117; }
+
+    tbody tr:hover td { background: #1e293b; }
+
+    td {
+      padding: 9px 14px;
+      border-right: 1px solid #1e293b;
+      text-align: center;
+    }
+
+    td.fault-label {
+      text-align: left;
+      font-weight: 600;
+      color: #e2e8f0;
+      white-space: nowrap;
+      min-width: 200px;
+      border-left: none;
+    }
+
+    td.fault-label .badge {
+      display: inline-block;
+      font-size: 0.65rem;
+      padding: 2px 6px;
+      border-radius: 4px;
+      margin-left: 7px;
+      vertical-align: middle;
+    }
+
+    .hit {
+      font-size: 1rem;
+    }
+
+    /* severity dot */
+    .dot {
+      display: inline-flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 2px;
+    }
+
+    .dot-icon { font-size: 1rem; }
+    .dot-sensors { font-size: 0.6rem; color: #64748b; }
+
+    /* ── Sensor impact cards ── */
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 16px;
+      margin-bottom: 48px;
+    }
+
+    .card {
+      background: #1e293b;
+      border: 1px solid #334155;
+      border-radius: 12px;
+      padding: 16px 18px;
+    }
+
+    .card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+
+    .card-fault {
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: #f8fafc;
+    }
+
+    .card-tank {
+      font-size: 0.72rem;
+      padding: 3px 8px;
+      border-radius: 20px;
+      font-weight: 700;
+    }
+
+    .tag-pt { background: #1e3a5f; color: #93c5fd; }
+    .tag-ed { background: #2d1e4f; color: #d8b4fe; }
+
+    .sensor-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 5px 0;
+      border-bottom: 1px solid #0f1117;
+      font-size: 0.77rem;
+    }
+
+    .sensor-row:last-child { border-bottom: none; }
+
+    .sensor-name { color: #94a3b8; }
+
+    .sensor-val {
+      font-weight: 700;
+      padding: 1px 6px;
+      border-radius: 4px;
+      font-size: 0.75rem;
+    }
+
+    .val-up   { background: #7f1d1d; color: #fca5a5; }
+    .val-down { background: #1c1917; color: #86efac; }
+    /* down = depleted = shown in green-ish for "drop" */
+    .val-down { background: #052e16; color: #86efac; }
+
+    /* legend */
+    .legend {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      font-size: 0.75rem;
+      color: #94a3b8;
+      margin-bottom: 36px;
+    }
+
+    .legend-item { display: flex; align-items: center; gap: 6px; }
+    .legend-swatch {
+      width: 14px; height: 14px; border-radius: 3px;
+    }
+  </style>
+</head>
+<body>
+
+<h1>Paint Shop — Defect Types by Tank</h1>
+<p class="subtitle">Pre-Treatment (PT-01 → PT-08) &nbsp;|&nbsp; E-Coat (ED-01 → ED-04) &nbsp;|&nbsp; 9 fault types across 12 tanks</p>
+
+<!-- ══════════════════════════════════
+     PROCESS LINE
+══════════════════════════════════ -->
+<div class="process-line">
+
+  <!-- PT-01 -->
+  <div class="tank-block">
+    <div class="tank-pill pt has-fault-1">PT-01</div>
+    <div class="tank-name">Hot Pre-Clean</div>
+    <div class="fault-count" style="color:#f59e0b">1 fault</div>
+  </div>
+  <div class="arrow">›</div>
+
+  <!-- PT-02 -->
+  <div class="tank-block">
+    <div class="tank-pill pt has-fault-1">PT-02</div>
+    <div class="tank-name">Main Cleaner</div>
+    <div class="fault-count" style="color:#f59e0b">1 fault</div>
+  </div>
+  <div class="arrow">›</div>
+
+  <!-- PT-03 -->
+  <div class="tank-block">
+    <div class="tank-pill pt has-fault-1">PT-03</div>
+    <div class="tank-name">Rinse 1</div>
+    <div class="fault-count" style="color:#f59e0b">1 fault</div>
+  </div>
+  <div class="arrow">›</div>
+
+  <!-- PT-04 -->
+  <div class="tank-block">
+    <div class="tank-pill pt has-fault-1">PT-04</div>
+    <div class="tank-name">Rinse 2</div>
+    <div class="fault-count" style="color:#f59e0b">1 fault</div>
+  </div>
+  <div class="arrow">›</div>
+
+  <!-- PT-05 -->
+  <div class="tank-block">
+    <div class="tank-pill pt has-fault-1">PT-05</div>
+    <div class="tank-name">Activation</div>
+    <div class="fault-count" style="color:#f59e0b">1 fault</div>
+  </div>
+  <div class="arrow">›</div>
+
+  <!-- PT-06 — most fault-prone -->
+  <div class="tank-block">
+    <div class="tank-pill pt has-fault-3">PT-06</div>
+    <div class="tank-name">Zinc Phosphate</div>
+    <div class="fault-count" style="color:#ef4444">3 faults ★</div>
+  </div>
+  <div class="arrow">›</div>
+
+  <!-- PT-07 -->
+  <div class="tank-block">
+    <div class="tank-pill pt has-fault-1">PT-07</div>
+    <div class="tank-name">Post-Rinse</div>
+    <div class="fault-count" style="color:#f59e0b">1 fault</div>
+  </div>
+  <div class="arrow">›</div>
+
+  <!-- PT-08 -->
+  <div class="tank-block">
+    <div class="tank-pill pt no-fault">PT-08</div>
+    <div class="tank-name">Nano-Seal</div>
+    <div class="fault-count" style="color:#475569">—</div>
+  </div>
+  <div class="arrow">›</div>
+
+  <!-- ED-01 -->
+  <div class="tank-block">
+    <div class="tank-pill ed has-fault-3">ED-01</div>
+    <div class="tank-name">E-Coat Bath</div>
+    <div class="fault-count" style="color:#ef4444">3 faults ★</div>
+  </div>
+  <div class="arrow">›</div>
+
+  <!-- ED-02 -->
+  <div class="tank-block">
+    <div class="tank-pill ed no-fault">ED-02</div>
+    <div class="tank-name">UF Rinse 1</div>
+    <div class="fault-count" style="color:#475569">—</div>
+  </div>
+  <div class="arrow">›</div>
+
+  <!-- ED-03 -->
+  <div class="tank-block">
+    <div class="tank-pill ed no-fault">ED-03</div>
+    <div class="tank-name">UF Rinse 2</div>
+    <div class="fault-count" style="color:#475569">—</div>
+  </div>
+  <div class="arrow">›</div>
+
+  <!-- ED-04 -->
+  <div class="tank-block">
+    <div class="tank-pill ed no-fault">ED-04</div>
+    <div class="tank-name">DI Final Rinse</div>
+    <div class="fault-count" style="color:#475569">—</div>
+  </div>
+
+</div><!-- /process-line -->
+
+
+<!-- ══════════════════════════════════
+     FAULT MATRIX
+══════════════════════════════════ -->
+<p class="section-title">Fault × Tank Matrix</p>
+
+<div class="legend">
+  <div class="legend-item"><span style="color:#ef4444;font-size:1rem;">●</span> Affected tank</div>
+  <div class="legend-item"><span style="color:#475569;font-size:1rem;">·</span> Not affected</div>
+</div>
+
+<div class="matrix-wrapper">
+<table>
+  <thead>
+    <tr>
+      <th style="text-align:left">Fault Type</th>
+      <th class="group-pt">PT-01</th>
+      <th class="group-pt">PT-02</th>
+      <th class="group-pt">PT-03</th>
+      <th class="group-pt">PT-04</th>
+      <th class="group-pt">PT-05</th>
+      <th class="group-pt">PT-06</th>
+      <th class="group-pt">PT-07</th>
+      <th class="group-pt">PT-08</th>
+      <th class="group-ed">ED-01</th>
+      <th class="group-ed">ED-02</th>
+      <th class="group-ed">ED-03</th>
+      <th class="group-ed">ED-04</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td class="fault-label">acid_drift <span class="badge" style="background:#7f1d1d;color:#fca5a5">PT</span></td>
+      <td>·</td><td>·</td><td>·</td><td>·</td><td>·</td>
+      <td style="color:#ef4444;font-size:1.1rem;">●</td>
+      <td>·</td><td>·</td><td>·</td><td>·</td><td>·</td><td>·</td>
+    </tr>
+    <tr>
+      <td class="fault-label">zinc_depletion <span class="badge" style="background:#7f1d1d;color:#fca5a5">PT</span></td>
+      <td>·</td><td>·</td><td>·</td><td>·</td><td>·</td>
+      <td style="color:#ef4444;font-size:1.1rem;">●</td>
+      <td>·</td><td>·</td><td>·</td><td>·</td><td>·</td><td>·</td>
+    </tr>
+    <tr>
+      <td class="fault-label">accelerator_depletion <span class="badge" style="background:#7f1d1d;color:#fca5a5">PT</span></td>
+      <td>·</td><td>·</td><td>·</td><td>·</td><td>·</td>
+      <td style="color:#ef4444;font-size:1.1rem;">●</td>
+      <td>·</td><td>·</td><td>·</td><td>·</td><td>·</td><td>·</td>
+    </tr>
+    <tr>
+      <td class="fault-label">titanium_depletion <span class="badge" style="background:#7f1d1d;color:#fca5a5">PT</span></td>
+      <td>·</td><td>·</td><td>·</td><td>·</td>
+      <td style="color:#ef4444;font-size:1.1rem;">●</td>
+      <td>·</td><td>·</td><td>·</td><td>·</td><td>·</td><td>·</td><td>·</td>
+    </tr>
+    <tr>
+      <td class="fault-label">alkalinity_depletion <span class="badge" style="background:#7f1d1d;color:#fca5a5">PT</span></td>
+      <td style="color:#ef4444;font-size:1.1rem;">●</td>
+      <td style="color:#ef4444;font-size:1.1rem;">●</td>
+      <td>·</td><td>·</td><td>·</td><td>·</td><td>·</td><td>·</td><td>·</td><td>·</td><td>·</td><td>·</td>
+    </tr>
+    <tr>
+      <td class="fault-label">rinse_contamination <span class="badge" style="background:#7f1d1d;color:#fca5a5">PT</span></td>
+      <td>·</td><td>·</td>
+      <td style="color:#ef4444;font-size:1.1rem;">●</td>
+      <td style="color:#ef4444;font-size:1.1rem;">●</td>
+      <td>·</td><td>·</td>
+      <td style="color:#ef4444;font-size:1.1rem;">●</td>
+      <td>·</td><td>·</td><td>·</td><td>·</td><td>·</td>
+    </tr>
+    <tr>
+      <td class="fault-label">temperature_creep <span class="badge" style="background:#2d1e4f;color:#d8b4fe">ED</span></td>
+      <td>·</td><td>·</td><td>·</td><td>·</td><td>·</td><td>·</td><td>·</td><td>·</td>
+      <td style="color:#ef4444;font-size:1.1rem;">●</td>
+      <td>·</td><td>·</td><td>·</td>
+    </tr>
+    <tr>
+      <td class="fault-label">meq_acid_buildup <span class="badge" style="background:#2d1e4f;color:#d8b4fe">ED</span></td>
+      <td>·</td><td>·</td><td>·</td><td>·</td><td>·</td><td>·</td><td>·</td><td>·</td>
+      <td style="color:#ef4444;font-size:1.1rem;">●</td>
+      <td>·</td><td>·</td><td>·</td>
+    </tr>
+    <tr>
+      <td class="fault-label">ph_drift <span class="badge" style="background:#2d1e4f;color:#d8b4fe">ED</span></td>
+      <td>·</td><td>·</td><td>·</td><td>·</td><td>·</td><td>·</td><td>·</td><td>·</td>
+      <td style="color:#ef4444;font-size:1.1rem;">●</td>
+      <td>·</td><td>·</td><td>·</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+<!-- ══════════════════════════════════
+     SENSOR IMPACT CARDS
+══════════════════════════════════ -->
+<p class="section-title">Sensor Impact per Fault</p>
+
+<div class="cards-grid">
+
+  <div class="card">
+    <div class="card-header">
+      <span class="card-fault">acid_drift</span>
+      <span class="card-tank tag-pt">PT-06 · Zinc Phosphate</span>
+    </div>
+    <div class="sensor-row"><span class="sensor-name">free_acid_pts</span><span class="sensor-val val-up">2.4 ↑</span></div>
+    <div class="sensor-row"><span class="sensor-name">total_acid_pts</span><span class="sensor-val val-up">26.1 ↑</span></div>
+    <div class="sensor-row"><span class="sensor-name">conductivity_us_cm</span><span class="sensor-val val-up">4380 ↑</span></div>
+  </div>
+
+  <div class="card">
+    <div class="card-header">
+      <span class="card-fault">zinc_depletion</span>
+      <span class="card-tank tag-pt">PT-06 · Zinc Phosphate</span>
+    </div>
+    <div class="sensor-row"><span class="sensor-name">zinc_g_per_l</span><span class="sensor-val val-down">0.78 ↓</span></div>
+    <div class="sensor-row"><span class="sensor-name">accelerator_pts</span><span class="sensor-val val-down">2.1 ↓</span></div>
+  </div>
+
+  <div class="card">
+    <div class="card-header">
+      <span class="card-fault">accelerator_depletion</span>
+      <span class="card-tank tag-pt">PT-06 · Zinc Phosphate</span>
+    </div>
+    <div class="sensor-row"><span class="sensor-name">accelerator_pts</span><span class="sensor-val val-down">1.8 ↓</span></div>
+    <div class="sensor-row"><span class="sensor-name">free_acid_pts</span><span class="sensor-val val-up">1.7 ↑</span></div>
+  </div>
+
+  <div class="card">
+    <div class="card-header">
+      <span class="card-fault">titanium_depletion</span>
+      <span class="card-tank tag-pt">PT-05 · Activation</span>
+    </div>
+    <div class="sensor-row"><span class="sensor-name">titanium_ppm</span><span class="sensor-val val-down">0.3 ↓</span></div>
+    <div class="sensor-row"><span class="sensor-name">ph</span><span class="sensor-val val-up">9.8 ↑</span></div>
+  </div>
+
+  <div class="card">
+    <div class="card-header">
+      <span class="card-fault">alkalinity_depletion</span>
+      <span class="card-tank tag-pt">PT-01 · Hot Pre-Clean</span>
+    </div>
+    <div class="sensor-row"><span class="sensor-name">free_alkalinity</span><span class="sensor-val val-down">5.2 ↓</span></div>
+    <div class="sensor-row"><span class="sensor-name">ph</span><span class="sensor-val val-down">10.6 ↓</span></div>
+  </div>
+
+  <div class="card">
+    <div class="card-header">
+      <span class="card-fault">alkalinity_depletion</span>
+      <span class="card-tank tag-pt">PT-02 · Main Cleaner</span>
+    </div>
+    <div class="sensor-row"><span class="sensor-name">free_alkalinity</span><span class="sensor-val val-down">7.1 ↓</span></div>
+    <div class="sensor-row"><span class="sensor-name">total_alkalinity</span><span class="sensor-val val-down">12.3 ↓</span></div>
+  </div>
+
+  <div class="card">
+    <div class="card-header">
+      <span class="card-fault">rinse_contamination</span>
+      <span class="card-tank tag-pt">PT-03 / PT-04 / PT-07</span>
+    </div>
+    <div class="sensor-row"><span class="sensor-name">PT-03 conductivity</span><span class="sensor-val val-up">320 ↑</span></div>
+    <div class="sensor-row"><span class="sensor-name">PT-04 conductivity</span><span class="sensor-val val-up">210 ↑</span></div>
+    <div class="sensor-row"><span class="sensor-name">PT-07 conductivity</span><span class="sensor-val val-up">580 ↑</span></div>
+  </div>
+
+  <div class="card">
+    <div class="card-header">
+      <span class="card-fault">temperature_creep</span>
+      <span class="card-tank tag-ed">ED-01 · E-Coat Bath</span>
+    </div>
+    <div class="sensor-row"><span class="sensor-name">temperature_c</span><span class="sensor-val val-up">35.2 ↑</span></div>
+    <div class="sensor-row"><span class="sensor-name">solids_pct</span><span class="sensor-val val-down">17.1 ↓</span></div>
+  </div>
+
+  <div class="card">
+    <div class="card-header">
+      <span class="card-fault">meq_acid_buildup</span>
+      <span class="card-tank tag-ed">ED-01 · E-Coat Bath</span>
+    </div>
+    <div class="sensor-row"><span class="sensor-name">meq_acid</span><span class="sensor-val val-up">41.5 ↑</span></div>
+    <div class="sensor-row"><span class="sensor-name">conductivity_us_cm</span><span class="sensor-val val-up">1950 ↑</span></div>
+  </div>
+
+  <div class="card">
+    <div class="card-header">
+      <span class="card-fault">ph_drift</span>
+      <span class="card-tank tag-ed">ED-01 · E-Coat Bath</span>
+    </div>
+    <div class="sensor-row"><span class="sensor-name">ph</span><span class="sensor-val val-up">6.8 ↑</span></div>
+    <div class="sensor-row"><span class="sensor-name">solids_pct</span><span class="sensor-val val-up">21.5 ↑</span></div>
+  </div>
+
+</div>
+
+<p style="text-align:center;font-size:0.72rem;color:#334155;padding-bottom:24px;">
+  Source: <code>src/lambdas/simulator/tank_profiles.py</code> · FAULT_OVERRIDES
+</p>
+
+</body>
+</html>

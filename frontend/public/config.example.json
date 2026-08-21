@@ -1,0 +1,9 @@
+{
+  "userPoolId": "",
+  "userPoolClientId": "",
+  "identityPoolId": "",
+  "wsEndpoint": "",
+  "restApiEndpoint": "",
+  "agentStreamUrl": "",
+  "region": "us-east-1"
+}

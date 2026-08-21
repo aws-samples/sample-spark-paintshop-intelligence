@@ -1,0 +1,29 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-surface text-slate-100 font-mono;
+    font-size: 13px;
+  }
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: #334155 #0f172a;
+  }
+}
+
+@layer components {
+  .panel {
+    @apply bg-panel border border-border rounded-lg p-4;
+  }
+  .badge-online {
+    @apply bg-emerald-900/50 text-emerald-400 border border-emerald-700 text-xs px-2 py-0.5 rounded-full;
+  }
+  .badge-degraded {
+    @apply bg-amber-900/50 text-amber-400 border border-amber-700 text-xs px-2 py-0.5 rounded-full;
+  }
+  .badge-offline {
+    @apply bg-red-900/50 text-red-400 border border-red-700 text-xs px-2 py-0.5 rounded-full;
+  }
+}
